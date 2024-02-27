@@ -1,8 +1,11 @@
-import { Button, Text, View, Image, StyleSheet } from "react-native"
+import { Button, Text, View, Image, StyleSheet, ScrollView } from "react-native"
+import PaymentComponent from "../components/PaymentComponent";
+import PromoDiskon from "../components/PromoDiskon";
 
 
 const HomeScreen = ({navigation}) => {
     return (
+        <ScrollView>
         <View>
             <Image style={styles.background} source={require('../../assets/Background.png')}/>
             <View style={styles.header}>
@@ -35,11 +38,13 @@ const HomeScreen = ({navigation}) => {
                 </View>
             </View>
             <View>
-                <Text style={styles.textListPembayaran}>List Pembayaran</Text>
+            <PaymentComponent />
+            <PromoDiskon />
             </View>
             <Button title="Go to Register"
                 onPress={() => navigation.navigate('Register')}/>        
         </View>
+        </ScrollView>
     )
 }
 
