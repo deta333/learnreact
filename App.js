@@ -21,8 +21,7 @@ export default function App() {
           
           <Tab.Screen name="Home"  options={{ headerShown: false, tabBarIcon: () => (
               <Image
-                source={require("./assets/Icon Pack/house-duotone.png")} 
-                style={{
+                source={require("./assets/Icon Pack/house-duotone.png")} style={{
                   width: 26,
                   height: 26,
                 }}
@@ -43,14 +42,12 @@ export default function App() {
            }} 
           component={RegisterScreen} />
 
-          <Tab.Screen name="Login"options={{ headerShown: false, tabBarIcon: () => (
-              <Image
-                source={require("./assets/Icon Pack/house-duotone.png")} 
-                style={{
+          <Tab.Screen name="Login" options={{ headerShown: false, 
+          tabBarIcon: () => (
+              <Image source={require("./assets/Icon Pack/house-duotone.png")} style={{
                   width: 26,
                   height: 26,
-                }}
-              />
+                }}/>
             )
            }} 
            component={LoginScreen} />
