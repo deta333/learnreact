@@ -1,10 +1,10 @@
 import { Text, View, StyleSheet } from "react-native"
 
 
-const RegisterScreen = ({navigation}) => {
+const LoginScreen = ({navigation}) => {
     return (
         <View style={styles.header}>
-        <Text>Ini REGISTER yaw</Text>
+        <Text>Ini LOGIN yaw</Text>
         </View>
     )
 }
@@ -18,4 +18,4 @@ const styles = StyleSheet.create({
       }
     });
 
-export default RegisterScreen
+export default LoginScreen

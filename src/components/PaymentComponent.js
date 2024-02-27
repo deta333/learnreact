@@ -40,10 +40,10 @@ const styles = StyleSheet.create({
 
     listPembayaran:{
         width: '25%',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     textListPembayaran:{
-        marginBottom:12,
+        marginBottom:8,
         fontSize: 20,
         fontWeight:'600',
         color: '#852884',

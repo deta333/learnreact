@@ -4,6 +4,9 @@ import { StatusBar } from 'expo-status-bar';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import HomeScreen from './src/screens/HomeScreens';
 import RegisterScreen from './src/screens/RegisterScreen';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import LoginScreen from './src/screens/LoginScreen';
+
 
 const Stack = createStackNavigator();
 
@@ -11,14 +14,48 @@ const Stack = createStackNavigator();
 
 
 export default function App() {
+  const Tab = createBottomTabNavigator();
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName='Home'>
-        <Stack.Screen name="Home" component={HomeScreen}/>
-        <Stack.Screen name="Register" component={RegisterScreen}/>
-      </Stack.Navigator>
-    </NavigationContainer>
+    <NavigationContainer >
+        <Tab.Navigator>
+          
+          <Tab.Screen name="Home"  options={{ headerShown: false, tabBarIcon: () => (
+              <Image
+                source={require("./assets/Icon Pack/house-duotone.png")} 
+                style={{
+                  width: 26,
+                  height: 26,
+                }}
+              />
+            )
+           }} 
+          component={HomeScreen} />
+          
+          <Tab.Screen name="Register" options={{ headerShown: false, tabBarIcon: () => (
+              <Image
+                source={require("./assets/Icon Pack/house-duotone.png")} 
+                style={{
+                  width: 26,
+                  height: 26,
+                }}
+              />
+            )
+           }} 
+          component={RegisterScreen} />
 
+          <Tab.Screen name="Login"options={{ headerShown: false, tabBarIcon: () => (
+              <Image
+                source={require("./assets/Icon Pack/house-duotone.png")} 
+                style={{
+                  width: 26,
+                  height: 26,
+                }}
+              />
+            )
+           }} 
+           component={LoginScreen} />
+        </Tab.Navigator>
+      </NavigationContainer>
   );
 }
 

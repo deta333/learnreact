@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
         margin:20
     },
     textPromoDiskon:{
-        marginBottom:12,
+
         fontSize: 20,
         fontWeight:'600',
         color: '#852884',
@@ -46,6 +46,9 @@ const styles = StyleSheet.create({
     },
     textPromoHead:{
         flexDirection:'row',
+        alignItems: 'center',
+        // backgroundColor:'yellow',
+        marginBottom:8,
     },
     sectionListPembayaran:{
         marginTop: 24,
