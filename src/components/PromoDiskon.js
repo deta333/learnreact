@@ -18,8 +18,8 @@ const PromoDiskon = () => {
     return (
         <View style={styles.sectionPromoDiskon}>
             <View style={styles.textPromoHead}>
-            <Text style={styles.textPromoDiskon}>Promo dan Diskon</Text>
-            <Text style={styles.textLihatSemua}>Lihat Semua</Text>
+                <Text style={styles.textPromoDiskon}>Promo dan Diskon</Text>
+                <Text style={styles.textLihatSemua}>Lihat Semua</Text>
             </View>
             <FlatList 
 
@@ -34,6 +34,16 @@ const PromoDiskon = () => {
 }
 
 const styles = StyleSheet.create({
+    sectionPromoDiskon:{
+        margin:20
+    },
+    textPromoDiskon:{
+        marginBottom:12,
+        fontSize: 20,
+        fontWeight:'600',
+        color: '#852884',
+        flex:1,
+    },
     textPromoHead:{
         flexDirection:'row',
     },
