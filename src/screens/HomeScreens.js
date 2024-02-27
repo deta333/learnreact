@@ -19,11 +19,23 @@ const HomeScreen = ({navigation}) => {
                         <Text style={styles.textNominal}>Rp. 2.000.000</Text>
                 </View>
                 <View style={styles.separator}></View>
-                <View style={styles.saldo}>
-                        <Text style={styles.textSaldo}>Saldo</Text>
-                        <Text style={styles.textNominal}>Rp. 2.000.000</Text>
+                <View style={styles.ppobtransaksi}>
+                    <View style={styles.templatetransaksi}>
+                        <Image style={styles.iconTransaksi} source={require('../../assets/Qris Icon.png')}/>
+                        <Text style={styles.textTransaksi}>QRIS</Text>
+                    </View>
+                    <View style={styles.templatetransaksi}>
+                        <Image style={styles.iconTransaksi} source={require('../../assets/Kirim Dana Icon.png')}/>
+                        <Text style={styles.textTransaksi}>Kirim Dana</Text>
+                    </View>
+                    <View style={styles.templatetransaksi}>
+                        <Image style={styles.iconTransaksi} source={require('../../assets/Topup Icon.png')}/>
+                        <Text style={styles.textTransaksi}>Top Up</Text>
+                    </View>
                 </View>
-
+            </View>
+            <View>
+                <Text style={styles.textListPembayaran}>List Pembayaran</Text>
             </View>
             <Button title="Go to Register"
                 onPress={() => navigation.navigate('Register')}/>        
@@ -32,9 +44,33 @@ const HomeScreen = ({navigation}) => {
 }
 
 const styles = StyleSheet.create({
+    textListPembayaran:{
+        fontSize: 20,
+        fontWeight:'600',
+        color: '#852884',
+    },
+    textTransaksi:{
+        marginTop:12,
+        color: '#852884',
+        fontWeight: '500'
+    },
+    templatetransaksi:{
+        alignItems: 'center',
+        flex:1,
+        // backgroundColor:'red'
+    },
+    ppobtransaksi:{
+        flexDirection:'row',
+        marginLeft:24,
+        marginRight:24,
+        marginTop:16,
+        justifyContent: 'center',
+        // backgroundColor:'yellow'
+    },
+    
     separator:{
-        height:10,
-        color: '#F2F2F2',
+        height:1,
+        backgroundColor: '#f2f2f2',
 
     },
     textSaldo:{
@@ -50,12 +86,12 @@ const styles = StyleSheet.create({
     
     saldo:{
         flexDirection: 'row',
-        padding: 24,
+        padding: 20,
     },
 
     frameppob:{
         width: 348,
-        height: 200,
+        height: 180,
         backgroundColor: 'white',
         marginTop: 8,
         marginLeft: 20,
