@@ -4,13 +4,25 @@ import axios from 'axios';
 
 const PaymentComponent = () => {
     const [user, setUser] = useState()
+    const [payment, setPayment] = useState()
 
     useEffect(() => {
     
       getAccountAxios();
+      getPayment();
     
     }, []); 
     
+
+    const getPayment = () => {
+        axios.get('https://private-anon-75f39ba77b-itodpbni.apiary-mock.com/menu/transfer')
+        .then(response => {
+          console.log("Respons Transfer", response.data)
+          setPayment(response.data)  
+        })
+        .catch(error => console.error("Error", error))
+      }
+
     const getAccountAxios = () => {
       axios.get('https://private-anon-75f39ba77b-itodpbni.apiary-mock.com/account')
       .then(response => {
@@ -31,16 +43,16 @@ return(
 <View style={styles.separator}></View>
 <View style={styles.ppobtransaksi}>
     <View style={styles.templatetransaksi}>
-        <Image style={styles.iconTransaksi} source={require('../../assets/Qris Icon.png')}/>
-        <Text style={styles.textTransaksi}>QRIS</Text>
+        <Image style={styles.iconTransaksi} source={{uri: payment && payment.menu && payment.menu[0].image, height:48, width: 48}}/>
+        <Text style={styles.textTransaksi}>{payment && payment.menu && payment.menu[0].title}</Text>
     </View>
     <View style={styles.templatetransaksi}>
-        <Image style={styles.iconTransaksi} source={require('../../assets/Kirim Dana Icon.png')}/>
-        <Text style={styles.textTransaksi}>Kirim Dana</Text>
+        <Image style={styles.iconTransaksi} source={{uri: payment && payment.menu && payment.menu[1].image, height:48, width: 48}}/>
+        <Text style={styles.textTransaksi}>{payment && payment.menu && payment.menu[1].title}</Text>
     </View>
     <View style={styles.templatetransaksi}>
-        <Image style={styles.iconTransaksi} source={require('../../assets/Topup Icon.png')}/>
-        <Text style={styles.textTransaksi}>Top Up</Text>
+        <Image style={styles.iconTransaksi} source={{uri: payment && payment.menu && payment.menu[2].image, height:48, width: 48}}/>
+        <Text style={styles.textTransaksi}>{payment && payment.menu && payment.menu[2].title}</Text>
     </View>
 </View>
 </View>
