@@ -1,7 +1,7 @@
 import { Button, Text, View, Image, StyleSheet, ScrollView } from "react-native"
-import PaymentComponent from "../components/PaymentComponent";
+import PaymentComponent from "../components/PPOBComponent";
 import PromoDiskon from "../components/PromoDiskon";
-import PPOBComponent from "../components/ppob";
+import PPOBComponent from "../components/PaymentComponent";
 import GetAccount from "../components/GetAccount";
 
 
@@ -19,8 +19,7 @@ const HomeScreen = ({navigation}) => {
             <PPOBComponent/>
             <PaymentComponent />
             <PromoDiskon />
-            <PromoDiskon />
-            <PromoDiskon />
+
                
             </View>
             {/* <Button title="Go to Register"
