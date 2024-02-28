@@ -21,49 +21,37 @@ export default function App() {
   return (
     <NavigationContainer >
         <Tab.Navigator>
-          
           <Tab.Screen name="Home"  options={{ headerShown: false, tabBarIcon: () => (
-              <Image
-                source={require("./assets/home icon.png")} style={{
-                  width: 26,
-                  height: 26,
+              <Image source={require("./assets/home icon.png")} style={{
+                  width: 26, height: 26, 
                 }}
               />
-            )
-           }} 
-          component={HomeScreen} />
+            ), tabBarLabelStyle: { fontSize: 12, color:'green', fontWeight:'600' },
+           }} component={HomeScreen} />
           
           <Tab.Screen name="History" options={{ headerShown: false, tabBarIcon: () => (
-              <Image
-                source={require("./assets/riwayat icon.png")} 
-                style={{
-                  width: 26,
-                  height: 26,
+              <Image source={require("./assets/riwayat icon.png")} style={{
+                  width: 26, height: 26,
                 }}
               />
-            )
-           }} 
-          component={HistoryScreen} />
+            ), tabBarLabelStyle: { fontSize: 12, color:'grey' },
+           }} component={HistoryScreen} />
 
           <Tab.Screen name="Inbox" options={{ headerShown: false, 
           tabBarIcon: () => (
               <Image source={require("./assets/inbox icon.png")} style={{
-                  width: 26,
-                  height: 26,
+                  width: 26, height: 26,
                 }}/>
-            )
-           }} 
-           component={InboxScreen} />
+            ), tabBarLabelStyle: { fontSize: 12, color:'grey' },
+           }} component={InboxScreen} />
 
            <Tab.Screen name="Profile" options={{ headerShown: false, 
           tabBarIcon: () => (
               <Image source={require("./assets/profil icon.png")} style={{
-                  width: 26,
-                  height: 26,
+                  width: 26, height: 26,
                 }}/>
-            )
-           }} 
-           component={ProfileScreen} />
+            ), tabBarLabelStyle: { fontSize: 12, color:'grey' },
+           }} component={ProfileScreen} />
         </Tab.Navigator>
       </NavigationContainer>
   );
