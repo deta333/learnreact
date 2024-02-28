@@ -21,7 +21,6 @@ const PaymentComponent = () => {
         <View style={styles.sectionListPembayaran}>
             <Text style={styles.textListPembayaran}>List Pembayaran</Text>
             <FlatList 
-                
                 data={list} 
                 numColumns={4}
                 renderItem={({item}) => <PaymentItemComponent image={item}/>} />

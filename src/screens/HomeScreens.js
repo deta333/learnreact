@@ -2,6 +2,7 @@ import { Button, Text, View, Image, StyleSheet, ScrollView } from "react-native"
 import PaymentComponent from "../components/PaymentComponent";
 import PromoDiskon from "../components/PromoDiskon";
 import PPOBComponent from "../components/ppob";
+import GetAccount from "../components/GetAccount";
 
 
 
@@ -13,14 +14,7 @@ const HomeScreen = ({navigation}) => {
         <ScrollView>
         <View>
             <Image style={styles.background} source={require('../../assets/Background.png')}/>
-            <View style={styles.header}>
-                <View style={styles.assalamualaikum}>
-                    <Text style={styles.textAssalamualaikum}>Assalamualaikum</Text>
-                    <Text style={styles.textNama}>Deta Pratama</Text>
-                </View>
-            <Image style={styles.iconLonceng} source={require('../../assets/Notification.png')}/>
-            </View>
-
+            <GetAccount />
             <View>
             <PPOBComponent/>
             <PaymentComponent />
@@ -42,33 +36,7 @@ background:{
     position: 'absolute',
     height: 900,
   },
-  header:{
-    flexDirection: 'row',
-    // backgroundColor: 'red',
-    padding: 20,
-    marginTop:45,
-    
-  },
-  assalamualaikum:{
-    flex:1,
-    // backgroundColor:'yellow'
 
-  },
-  textAssalamualaikum:{
-    fontSize: 16,
-    color: 'white',
-    
-  },
-  textNama:{
-    fontSize: 20,
-    fontWeight: '600',
-    color: 'white',
-    marginTop: 4,
-  },
-
-  iconLonceng:{
-    alignItems: 'center',
-  }
 });
 
 export default HomeScreen

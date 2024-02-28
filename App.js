@@ -6,6 +6,9 @@ import HomeScreen from './src/screens/HomeScreens';
 import RegisterScreen from './src/screens/RegisterScreen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import LoginScreen from './src/screens/LoginScreen';
+import HistoryScreen from './src/screens/HistoryScreen';
+import InboxScreen from './src/screens/InboxScreen';
+import ProfileScreen from './src/screens/ProfileScreen';
 
 
 const Stack = createStackNavigator();
@@ -21,7 +24,7 @@ export default function App() {
           
           <Tab.Screen name="Home"  options={{ headerShown: false, tabBarIcon: () => (
               <Image
-                source={require("./assets/Icon Pack/house-duotone.png")} style={{
+                source={require("./assets/home icon.png")} style={{
                   width: 26,
                   height: 26,
                 }}
@@ -30,9 +33,9 @@ export default function App() {
            }} 
           component={HomeScreen} />
           
-          <Tab.Screen name="Register" options={{ headerShown: false, tabBarIcon: () => (
+          <Tab.Screen name="History" options={{ headerShown: false, tabBarIcon: () => (
               <Image
-                source={require("./assets/Icon Pack/house-duotone.png")} 
+                source={require("./assets/riwayat icon.png")} 
                 style={{
                   width: 26,
                   height: 26,
@@ -40,17 +43,27 @@ export default function App() {
               />
             )
            }} 
-          component={RegisterScreen} />
+          component={HistoryScreen} />
 
-          <Tab.Screen name="Login" options={{ headerShown: false, 
+          <Tab.Screen name="Inbox" options={{ headerShown: false, 
           tabBarIcon: () => (
-              <Image source={require("./assets/Icon Pack/house-duotone.png")} style={{
+              <Image source={require("./assets/inbox icon.png")} style={{
                   width: 26,
                   height: 26,
                 }}/>
             )
            }} 
-           component={LoginScreen} />
+           component={InboxScreen} />
+
+           <Tab.Screen name="Profile" options={{ headerShown: false, 
+          tabBarIcon: () => (
+              <Image source={require("./assets/profil icon.png")} style={{
+                  width: 26,
+                  height: 26,
+                }}/>
+            )
+           }} 
+           component={ProfileScreen} />
         </Tab.Navigator>
       </NavigationContainer>
   );
